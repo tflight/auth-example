@@ -16,7 +16,7 @@ class Auth
     }
 
     /**
-     * Authn middleware invokable class
+     * Auth middleware invokable class
      *
      * @param \Psr\Http\Message\ServerRequestInterface $request  PSR7 request
      * @param \Psr\Http\Message\ResponseInterface      $response PSR7 response
