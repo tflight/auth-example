@@ -20,5 +20,5 @@ $container['logger'] = function ($c) {
 
 // Auth middleware
 $container['Auth'] = function ($c) {
-	return new App\middleware\Auth($c->get('router'));
+    return new App\middleware\Auth($c->get('router'));
 };

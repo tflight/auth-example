@@ -18,9 +18,9 @@ class Auth
     /**
      * Authn middleware invokable class
      *
-     * @param  \Psr\Http\Message\ServerRequestInterface $request  PSR7 request
-     * @param  \Psr\Http\Message\ResponseInterface      $response PSR7 response
-     * @param  callable                                 $next     Next middleware
+     * @param \Psr\Http\Message\ServerRequestInterface $request  PSR7 request
+     * @param \Psr\Http\Message\ResponseInterface      $response PSR7 response
+     * @param callable                                 $next     Next middleware
      *
      * @return \Psr\Http\Message\ResponseInterface
     **/
@@ -28,11 +28,11 @@ class Auth
     {
         $loggedIn = $_SESSION['isLoggedIn'];
         if ($loggedIn != 'yes') {
-        	// If the user is not logged in, redirect them home
+            // If the user is not logged in, redirect them home
             return $response->withRedirect($this->router->pathFor('home'), 403);
         }
 
-		// The user must be logged in, so just pass this request down the middleware chain.
+        // The user must be logged in, so pass this request down the middleware chain
         $response = $next($request, $response);
 
         // And pass the request back up the middleware chain.
