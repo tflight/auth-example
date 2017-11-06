@@ -29,7 +29,7 @@ class Auth
         $loggedIn = $_SESSION['isLoggedIn'];
         if ($loggedIn != 'yes') {
             // If the user is not logged in, redirect them home
-            return $response->withRedirect($this->router->pathFor('home');
+            return $response->withRedirect($this->router->pathFor('home'));
         }
 
         // The user must be logged in, so pass this request down the middleware chain
